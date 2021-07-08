@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>salario</title>
+<script type="text/javascript">
+	
+   function calcula(){
+ 		
+ 		let salMes = document.getElementById('salario').value;
+ 		// terça parte do salario bruto 
+ 		let tercaParte = salMes.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })/3;
+ 		let salFerias = parseInt(tercaParte) + parseInt(salMes);
+ 		
+ 		let desconto8 = 0.08;
+ 		
+ 		let desconto9 = 0.09;
+ 		
+ 		let desconto11 = 0.11;
+ 		
+ 		let mulSal = 0;
+ 		let salFinal = 0
+
+ 		if(salFerias >= 1752,81){
+    		mulSal = salFerias * desconto8
+    		salFinal = parseInt(mulSal) + parseInt(salMes)
+ 		}else if(salFerias >1752,81 && salFerias <= 2919,72){
+ 			mulSal = salFerias * desconto9
+ 			salFinal = parseInt(mulSal) + parseInt(salMes)
+ 		}else if(salFerias >2919,72){
+ 			mulSal = salFerias * desconto11
+ 			salFinal = parseInt(mulSal) + parseInt(salMes)
+ 		}
+
+   	window.alert(salMes + ' salario bruto');
+   	window.alert(tercaParte + ' terça parte');
+   	window.alert(salFerias + ' salario de feria sem desconto');
+   	window.alert(mulSal + ' valor do desconto')
+    window.alert(salFinal + ' quanto vai receber')
+   }
+
+
+
+
+
+</script>
+
+</head>
+<body>
+   <input type="text" id="salario" name="salario">
+  <input type="button" id="calcula" name="calcula" value="calcula" onclick="calcula()">
+</body>
+</html>
